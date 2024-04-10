@@ -4,6 +4,8 @@ version = "2.2.0"
 edition = "2021"
 authors = ["Danny Tatom <its.danny@hey.com>"]
 description = "An interactive CLI for creating conventional commits."
+documentation = "https://docs.rs/koji"
+repository = "https://github.com/its-danny/koji"
 license = "MIT"
 
 [[bin]]
