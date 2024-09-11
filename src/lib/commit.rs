@@ -1,6 +1,7 @@
 use std::{fs::File, io::Write};
 
 use anyhow::Result;
+#[cfg(feature = "cocogitto")]
 use cocogitto::CocoGitto;
 use git2::Repository;
 
