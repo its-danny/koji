@@ -117,7 +117,7 @@ fn main() -> Result<()> {
         scope,
         summary,
         body,
-        breaking: is_breaking_change
+        breaking: is_breaking_change,
     };
 
     // Do the thing!

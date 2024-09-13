@@ -163,7 +163,7 @@ mod tests {
     use std::collections::HashMap;
 
     // TODO optional, figure out how to run tests for both with and without cocogitto feature
-    
+
     use requestty::ListItem;
 
     use crate::config::Config;
