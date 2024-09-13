@@ -162,7 +162,8 @@ pub fn get_extracted_answers(answers: &Answers, config: &Config) -> Result<Extra
 mod tests {
     use std::collections::HashMap;
 
-    use cocogitto::CocoGitto;
+    // TODO optional, figure out how to run tests for both with and without cocogitto feature
+    
     use requestty::ListItem;
 
     use crate::config::Config;
@@ -353,21 +354,6 @@ mod tests {
                 body: Some("just never enough space!\n\ncloses #554".into()),
                 is_breaking_change: false,
             }
-        );
-
-        let message = CocoGitto::get_conventional_message(
-            &extracted_answers.commit_type,
-            extracted_answers.scope,
-            extracted_answers.summary,
-            extracted_answers.body,
-            None,
-            extracted_answers.is_breaking_change,
-        )
-        .unwrap();
-
-        assert_eq!(
-            message,
-            "feat(space): add more space\n\njust never enough space!\n\ncloses #554"
         );
     }
 }

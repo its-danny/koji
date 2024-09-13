@@ -6,7 +6,7 @@ use clap::Parser;
 use conventional_commit_parser::parse;
 use git2::Repository;
 use koji::answers::{get_extracted_answers, ExtractedAnswers};
-use koji::commit::{commit, write_commit_msg};
+use koji::commit::{commit, write_commit_msg, CommitParts};
 use koji::config::{Config, ConfigArgs};
 use koji::questions::create_prompt;
 
@@ -112,18 +112,19 @@ fn main() -> Result<()> {
         summary,
     } = get_extracted_answers(&answers, &config)?;
 
+    let commit_parts = CommitParts {
+        commit_type,
+        scope,
+        summary,
+        body,
+        breaking: is_breaking_change
+    };
+
     // Do the thing!
     if hook {
-        write_commit_msg(repo, commit_type, scope, summary, body, is_breaking_change)?;
+        write_commit_msg(repo, commit_parts)?;
     } else {
-        commit(
-            commit_type,
-            scope,
-            summary,
-            body,
-            is_breaking_change,
-            config.sign,
-        )?;
+        commit(commit_parts, config.sign)?;
     }
 
     Ok(())
