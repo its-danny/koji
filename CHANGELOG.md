@@ -2,6 +2,24 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+
+## [3.0.0](https://github.com/cococonscious/koji/compare/v2.2.0...v3.0.0) - 2024-09-24
+
+### Added
+
+- *(gitignore)* add intellij, vim, vscode and git ([#96](https://github.com/cococonscious/koji/pull/96))
+- *(cargo)* add documentation and repository links ([#88](https://github.com/cococonscious/koji/pull/88))
+
+### Changed
+
+- type filtering, multi-line body support ([#99](https://github.com/cococonscious/koji/pull/99))
+- non-default vendored-openssl feature, pin cocogitto ([#98](https://github.com/cococonscious/koji/pull/98))
+- shorter test asserts, vendored openssl, complete workflow overhaul ([#94](https://github.com/cococonscious/koji/pull/94))
+- update repository url, badges and license ([#93](https://github.com/cococonscious/koji/pull/93))
+- *(readme)* looking for maintainer
+- use asdf
+- use devenv
+
 ## [2.2.0](https://github.com/cococonscious/koji/compare/2.1.0..2.2.0) - 2024-01-06
 #### Build system
 - **(deps)** update cocogitto to 6.0 - ([503759c](https://github.com/cococonscious/koji/commit/503759c6368e85b73682c8792c272297eea897ee)) - Danny Tatom
